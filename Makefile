@@ -140,3 +140,6 @@ benchs/rendering.o: benchs/rendering.cpp benchs/common.hpp benchs/timing.hpp
 
 benchs/rendering: benchs/rendering.o libheatmap.a
 	$(CXX) $^ $(LDFLAGS) -o $@
+
+./latlong2point: ./latlong2point.cpp
+	$(CXX) -c $< $(CXXFLAGS) -o $@ 
