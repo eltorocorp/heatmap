@@ -10,6 +10,14 @@ Just run gen_heat_map.sh on a server running OpenTileServer.
 gen_heat_map.sh adds the output (heatmap.png) to an images folder in the frontend directory used
 by OpentileServer.
 
+The program (latlong2point) currently requires data.txt to exist in the same directory as it, and outputs
+points.txt.
+
+data.txt contains space delimited lat-long values on each line except the first three lines which are:
+1. width and height of final png image
+2. lower and upper latitude bounds of image
+3. lower and upper longitude bounds of image
+4-?. lat-long pairs
 
 Below is the README.md for the original repo. for reference
 =======
