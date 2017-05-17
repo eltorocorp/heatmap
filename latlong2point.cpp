@@ -23,7 +23,7 @@ int main(int argc, char** argv) //If not given a list, will look for data.txt in
    vector<float> longList;
    int height = 0, width = 0;
    float latLowBound = 0.0, latHighBound = 0.0, longLowBound = 0.0, longHighBound = 0.0;
-   
+
 
    if(argc > 2)
    {
@@ -112,8 +112,8 @@ int main(int argc, char** argv) //If not given a list, will look for data.txt in
 
    for(int i = 0 ; i < size ; i++)
    {
-      latList[i] = round((minLat - latLowBound) + (((latList[i] - latLowBound)/(latHighBound - latLowBound)))*width);
-      longList[i] = round((minLong - longLowBound) + (1 -((longList[i] - longLowBound)/(longHighBound - longLowBound)))*height);
+      latList[i] = round((minLat - latLowBound) + (1 -((latList[i] - latLowBound)/(latHighBound - latLowBound)))*height);
+      longList[i] = round((minLong - longLowBound) + (((longList[i] - longLowBound)/(longHighBound - longLowBound)))*width);
    }
 
    ofstream outputFile;
@@ -126,7 +126,7 @@ int main(int argc, char** argv) //If not given a list, will look for data.txt in
    {
       for(int i = 0 ; i < size ; i++)
       { 
-	 outputFile << latList[i] << " " << longList[i] << endl;
+	 outputFile << longList[i] << " " << latList[i] << endl;
       }
    }
    outputFile.close();
