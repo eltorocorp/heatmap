@@ -112,8 +112,8 @@ int main(int argc, char** argv) //If not given a list, will look for data.txt in
 
    for(int i = 0 ; i < size ; i++)
    {
-      latList[i] = round((minLat - latLowBound) + (1 -((latList[i] - latLowBound)/(latHighBound - latLowBound)))*height);
-      longList[i] = round((minLong - longLowBound) + (((longList[i] - longLowBound)/(longHighBound - longLowBound)))*width);
+      latList[i] = round((1 -((latList[i] - latLowBound)/(latHighBound - latLowBound)))*height);
+      longList[i] = round((((longList[i] - longLowBound)/(longHighBound - longLowBound)))*width);
    }
 
    ofstream outputFile;
