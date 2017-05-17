@@ -1,3 +1,19 @@
+LatLong2XY
+=======
+
+Converts a list of latitude and longitude cooridinates into (x,y) points to be used
+with the forked repository. 
+
+Just run gen_heat_map.sh on a server running OpenTileServer.
+(If this is the first time running it, first run the Makefile to compile the necessary programs)
+
+gen_heat_map.sh adds the output (heatmap.png) to an images folder in the frontend directory used
+by OpentileServer.
+
+
+Below is the README.md for the original repo. for reference
+=======
+
 heatmap
 =======
 

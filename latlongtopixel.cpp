@@ -109,7 +109,6 @@ int main(int argc, char** argv) //If not given a list, will look for data.txt in
       }
    }
    
-   cout << "longLowBound " << longLowBound << endl;
 
    for(int i = 0 ; i < size ; i++)
    {
