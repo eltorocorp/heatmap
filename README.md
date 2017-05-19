@@ -17,7 +17,12 @@ data.txt contains space delimited lat-long values on each line except the first 
 1. width and height of final png image
 2. lower and upper latitude bounds of image
 3. lower and upper longitude bounds of image
-4-?. lat-long pairs
+4. - ? lat-long pairs
+
+
+##Issues:
+1. There is a geometry error with the way the points are found. The current method fails to consider the shape of the Earth and the image becomes more distorted as the lat-long range increases. There is commented code in latlong2point.cpp which attempts to fix this issue, but was not working at the deadline for this project.
+
 
 Below is the README.md for the original repo. for reference
 =======
