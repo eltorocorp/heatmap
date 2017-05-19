@@ -2,16 +2,32 @@ LatLong2XY
 =======
 
 Converts a list of latitude and longitude cooridinates into (x,y) points to be used
-with the forked repository. 
+with the forked repository. This should be run on a server running OpenTileServer.
 
-Just run gen_heat_map.sh on a server running OpenTileServer.
-(If this is the first time running it, first run the Makefile to compile the necessary programs)
+1. First Clone the repo
 
-gen_heat_map.sh adds the output (heatmap.png) to an images folder in the frontend directory used
-by OpentileServer.
+`git clone https://github.com/eltorocorp/heatmap.git`
 
-The program (latlong2point) currently requires data.txt to exist in the same directory as it, and outputs
-points.txt.
+2. Go to the heatmap directory
+`cd ~/heatmap`
+
+3. create the images folder in the front-end root directory
+`sudo mkdir /var/www/html/images`
+
+4. Run gen_heat_map.sh
+If this is the first time running it, first run the Makefile to compile the necessary programs
+`make`
+otherwise, 
+`~/heatmap/gen_heat_map.sh`
+
+gen_heat_map.sh adds the output (heatmap.png and heatmap2.png) to an images folder in the frontend directory used by OpentileServer.
+
+(heatmap.png uses locations of starbucks in the US)
+(heatmap2.png uses locations of thrift stores in Louisville)
+
+##making your own heatmap.
+
+The program (latlong2point) currently requires data.txt to exist in the same directory as it, and outputs points.txt.
 
 data.txt contains space delimited lat-long values on each line except the first three lines which are:
 1. width and height of final png image
@@ -19,12 +35,14 @@ data.txt contains space delimited lat-long values on each line except the first 
 3. lower and upper longitude bounds of image
 4. - ? lat-long pairs
 
+once data.txt exists with the proper format, just run:
+`~/heatmap/latlong2points
 
 ##Issues:
 1. There is a geometry error with the way the points are found. The current method fails to consider the shape of the Earth and the image becomes more distorted as the lat-long range increases. There is commented code in latlong2point.cpp which attempts to fix this issue, but was not working at the deadline for this project.
 
 
-Below is the README.md for the original repo. for reference
+(Below is the README.md for the original repo. for reference)
 =======
 
 heatmap
